@@ -34,7 +34,7 @@ const RevenusPage = () => {
             setLoading(true)
             try {
                 const data = await getIncomesByPeriod(user.primaryEmailAddress.emailAddress, p)
-                setIncomes(data)
+                setIncomes(data as Income[])
             } catch (err) {
                 console.error("Erreur:", err)
             } finally {
